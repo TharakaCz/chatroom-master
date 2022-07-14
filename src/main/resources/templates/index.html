@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>chat window interface</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{css/reset.min.css}">
+    <link rel="stylesheet" th:href="@{css/index.css}">
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="shortcut icon" href="./favicon.ico">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            
+            <div class="left">
+                <div class="top">
+                    <img class="mine-img" src="https://play-lh.googleusercontent.com/XiSbWLx2s52GCs6NDS2oppFlu6kos6w1V9q7sbSuLSvMEhWibyfGxVe22SaJWrr1-Qc" />
+                    <br><br>
+                    <span>
+                        Online chat room based on WebSocket
+                    </span>
+                    <!-- <input type="text" placeholder="Search" /> -->
+                    <!-- <a href="javascript:;" class="search"></a> -->
+                </div>
+
+                <div class="readme">
+                    <!--<div class="introduction">-->
+                        <!--<span class="title">Instructions for use</span>-->
+                        <!--<span class="item">1. Register to get several user accounts</span>-->
+                        <!--<span class="item">2. Browser open several windows to log in separately</span>-->
+                        <!--<span class="item">3. Fill in the sending object, if it is empty, broadcast</span>-->
+                        <!--<span class="item">4. Peer-to-peer/broadcast messaging</span>-->
+                    <!--</div>-->
+                    <!--<div class="insufficience">-->
+                        <!--<span class="title">to be updated</span>-->
+                        <!--<span class="item">1. Online number, user object display</span>-->
+                        <!--<span class="item">2. User session save</span>-->
+                        <!--<span class="item">3. Custom login blocker added</span>-->
+                        <!--<span class="item">4. Implement users, user groups, rooms</span>-->
+                        <!--<span class="item">5. User chat interface optimization</span>-->
+                    <!--</div>-->
+                    <div class="copyright">
+                        <span class="item">@tharakacgamage 2022-06-30</span>
+                        <span class="item"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right">
+                <div class="top">
+                    <span> send to: </span>
+                    <input type="text" class="receiver-input" placeholder="The user name of the other party" />
+                    <a class="change-user" href="./login"> switch account</a>
+                </div>
+                <div class="chat active-chat">
+                    <!--
+                    <div class="conversation-start">
+                        <span>Today, 6:48 AM</span>
+                    </div>
+                    <div class="bubble you">
+                        hello,
+                    </div>
+                    <div class="bubble you">
+                        I am Xiaoming
+                    </div>
+                    <div class="bubble me">
+                        I know
+                    </div>
+                    -->
+                </div>
+
+                <div class="write">
+                    <a class="write-link attach"></a>
+                    <input type="text" />
+                    <a href="javascript:sendMessage();" class="write-link send"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{lib/sockjs.min.js}"></script>
+    <script th:src="@{lib/stomp.min.js}"></script>
+    <script th:src="@{lib/jquery.js}"></script>
+    <script th:src="@{js/index.js}"></script>
+</body>
+</html>
